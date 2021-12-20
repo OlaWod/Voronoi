@@ -2,9 +2,9 @@
 
 ## 打开页面
 
-在浏览器正确打开 https://olawod.github.io/Voronoi/ 或 index.html 后，将随机生成 100 个点并生成 Voronoi 图，显示如下画面：
+在浏览器正确打开[https://olawod.github.io/Voronoi/](https://olawod.github.io/Voronoi/) 或 `index.html` 后，将随机生成 100 个点并生成 Voronoi 图，显示如下画面：
 
-![open](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/open.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/open.png" alt="open" style="zoom:50%;" />
 
 ## 随机生成 N 个点
 
@@ -14,7 +14,7 @@
 
 在按钮 "随机生成" 那一行的输入框中输入要生成的点数 N=200，点击按钮 "随机生成" 后，显示如下画面：
 
-![open](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/randgen.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/randgen.png" alt="randgen" style="zoom:50%;" />
 
 注意，程序执行时间与 N 呈正相关，请根据自身电脑及浏览器配置酌情填写生成点数。
 
@@ -24,7 +24,7 @@
 
 当前 Voronoi 图中共有 100 个点时，在按钮 "随机添加" 那一行的输入框中输入要添加的点数 N=50，点击按钮 "随机添加" 后，显示如下画面：
 
-![open](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/randadd.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/randadd.png" alt="randadd" style="zoom:50%;" />
 
 注意，程序执行时间与 N 呈正相关，请根据自身电脑及浏览器配置酌情填写添加点数。
 
@@ -34,7 +34,7 @@
 
 鼠标点击左上角前与点击左上角后，显示如下画面：（左图为点击前，右图为点击后）
 
-![addclick](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/addclick.jpg)
+![addclick](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/addclick.jpg)
 
 ## 添加新点（输入坐标）
 
@@ -42,7 +42,7 @@
 
 在按钮 "添加一点" 那一行的输入框中输入要生成的点的横坐标=100 与纵坐标=100，点击按钮 "添加一点" 后，显示如下画面：（左图为添加前，右图为添加后）
 
-![addtext](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/addtext.jpg)
+![addtext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/addtext.jpg)
 
 ## 求鼠标所在位置的最近邻
 
@@ -50,7 +50,7 @@
 
 将鼠标移到坐标（358, 196） 后，显示如下画面：
 
-![neighbormm](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/neighbormm.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/neighbormm.png" alt="neighbormm" style="zoom:50%;" />
 
 可以看到，点（358, 196）的最近邻是点30，其坐标是（362, 171.8），其所在区域被高亮显示。
 
@@ -60,7 +60,7 @@
 
 在按钮 "求最近邻" 那一行的输入框中输入要求最近邻的点的横坐标=300 与纵坐标=300，点击按钮 "求最近邻" 后，显示如下画面：
 
-![neighbortext](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/neighbortext.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/neighbortext.png" alt="neighbortext" style="zoom:50%;" />
 
 可以看到，点（300, 300）的最近邻是点61，其坐标是（331.1, 294.5），其所在区域被高亮显示。
 
@@ -70,4 +70,4 @@
 
 点击按钮 "清空" 后，显示如下画面：
 
-![reset](https://raw.githubusercontent.com/OlaWod/Voronoi/main/docs/source/assets/reset.png)
+<img src="https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/reset.png" alt="reset" style="zoom:50%;" />
