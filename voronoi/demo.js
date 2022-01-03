@@ -12,6 +12,7 @@ var VoronoiDemo = {
 		this.canvas = document.getElementById('voronoiCanvas');
 		this.randomSites(100,true);
 		this.render();
+		this.delaunay = false;
 		},
 
 	clearSites: function() {
@@ -244,6 +245,68 @@ var VoronoiDemo = {
 			this.lastCell = cellid;
 			}
 		document.getElementById('nearestCell').innerHTML = "点" + cellid + ", 坐标" + "(" + this.diagram.cells[cellid].site.x + ", " + this.diagram.cells[cellid].site.y + ")";
+	},
+	
+	delaunayForNearest: function() {
+		this.delaunay = true;
+		var ctx = this.canvas.getContext('2d');
+		if (!this.diagram) {return;}
+		var cells = this.diagram.cells;
+		if (!cells) {return;}
+		if (this.lastCell !== undefined) {
+			this.renderCell(this.lastCell, '#fff', '#000');
+			this.lastCell = undefined;
+		}
+		// edges
+		for(let i=0; i<cells.length; i++){
+			var cell = cells[i];
+			var halfedges = cell.halfedges,
+				nHalfedges = halfedges.length,
+				edge, vl, vr, dist;
+			let mindist = Infinity, minx = 0, miny = 0;
+			for (var iHalfedge=0; iHalfedge<nHalfedges; iHalfedge++) {
+				edge = halfedges[iHalfedge].edge;
+				vl = edge.lSite;
+				vr = edge.rSite;
+				if(vl != null && vr != null){
+					ctx.beginPath();
+					ctx.moveTo(vl.x,vl.y);
+					ctx.lineTo(vr.x,vr.y);
+					ctx.globalAlpha = 0.2;
+					ctx.strokeStyle = '#cccccc';
+					ctx.stroke();
+					dist = (vl.x-vr.x)*(vl.x-vr.x)+(vl.y-vr.y)*(vl.y-vr.y);
+					if(dist < mindist){
+						mindist = dist; 
+						if(cell.site.voronoiId != vl.voronoiId){
+							minx = vl.x; miny = vl.y;
+						}else{
+							minx = vr.x; miny = vr.y;
+						}
+					}
+				}
+			}
+			ctx.beginPath();
+			ctx.moveTo(cell.site.x,cell.site.y);
+			ctx.lineTo(minx,miny);
+			var dx = minx - cell.site.x;
+			var dy = miny - cell.site.y;
+			var angle = Math.atan2(dy, dx);
+			var headlen = 8;
+			ctx.moveTo(minx - headlen * Math.cos(angle - Math.PI / 6), miny - headlen * Math.sin(angle - Math.PI / 6));
+			ctx.lineTo(minx, miny);
+			ctx.lineTo(minx - headlen * Math.cos(angle + Math.PI / 6), miny - headlen * Math.sin(angle + Math.PI / 6));
+			ctx.globalAlpha = 1;
+			ctx.strokeStyle = '#0099ff';
+			ctx.stroke();
+			// site
+			v = cell.site;
+			ctx.globalAlpha = 1;
+			ctx.fillStyle = '#f00';
+			ctx.beginPath();
+			ctx.rect(v.x-2/3,v.y-2/3,2,2);
+			ctx.fill();
+		}
 	},
 		
 };

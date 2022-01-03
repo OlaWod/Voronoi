@@ -17,27 +17,32 @@
 
 <h4 class="divhdr">最近点 Voronoi 图解 <span id="voronoiStats" style="font:normal 11px sans"></span></h4>
 <div id="canvasParent">
-<canvas id="voronoiCanvas" width="800" height="600" onclick="VoronoiDemo.addSiteClick();VoronoiDemo.recompute();" onmousemove="VoronoiDemo.cellUnderMouse(event);"></canvas>
+<canvas id="voronoiCanvas" width="800" height="600" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.addSiteClick();VoronoiDemo.recompute();}" onmousemove="if(!VoronoiDemo.delaunay){VoronoiDemo.cellUnderMouse(event);}"></canvas>
 </div>
 
 <h4 class="divhdr">控制面板</h4>
 <div class="divinfo" id="voronoiGenerator">
-<input type="button" class="btn-control" value="求最近邻" onclick="VoronoiDemo.getNearestCell();VoronoiDemo.recompute();"/>
+<input type="checkbox" onclick="if(this.checked){VoronoiDemo.delaunayForNearest();}else{VoronoiDemo.render();VoronoiDemo.delaunay=false;}" id="delaunay">
+<label for="delaunay" style="vertical-align:top">
+求当前图上所有点的最近邻 (勾选此项将无法再进行交互，因此请交互完后再勾选此项求最近邻，若要重新进行交互请取消勾选此项)
+</label>
+<br/>
+<input type="button" class="btn-control" value="求最近邻" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.getNearestCell();VoronoiDemo.recompute();}"/>
 横坐标<input id="x-target" type="text" value="100" size="5" maxlength="5"/>
 纵坐标<input id="y-target" type="text" value="100" size="5" maxlength="5"/>
 最近邻：<span id="nearestCell"></span>
 <br/>
-<input type="button" class="btn-control" value="随机生成" onclick="VoronoiDemo.randomSites(parseInt(document.getElementById('voronoiNumberSites').value,10),true);VoronoiDemo.render();"/> 
+<input type="button" class="btn-control" value="随机生成" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.randomSites(parseInt(document.getElementById('voronoiNumberSites').value,10),true);VoronoiDemo.render();}"/> 
 或
-<input type="button" class="btn-control" value="随机添加" onclick="VoronoiDemo.randomSites(parseInt(document.getElementById('voronoiNumberSites').value,10),false);VoronoiDemo.render();"/>
+<input type="button" class="btn-control" value="随机添加" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.randomSites(parseInt(document.getElementById('voronoiNumberSites').value,10),false);VoronoiDemo.render();}"/>
 <input id="voronoiNumberSites" type="text" value="100" size="5" maxlength="5"/> 
 个点.
 <br/>
-<input type="button" class="btn-control" value="添加一点" onclick="VoronoiDemo.addSiteText();VoronoiDemo.recompute();"/>
+<input type="button" class="btn-control" value="添加一点" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.addSiteText();VoronoiDemo.recompute();}"/>
 横坐标<input id="x-new" type="text" value="100" size="5" maxlength="5"/>
 纵坐标<input id="y-new" type="text" value="100" size="5" maxlength="5"/>
 <br/>
-<input id="voronoiClearSites" type="button" class="btn-control" value="清空" onclick="VoronoiDemo.clearSites();VoronoiDemo.render();"/>
+<input id="voronoiClearSites" type="button" class="btn-control" value="清空" onclick="if(!VoronoiDemo.delaunay){VoronoiDemo.clearSites();VoronoiDemo.render();}"/>
 </div>
 
 </div>
