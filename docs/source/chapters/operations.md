@@ -4,7 +4,7 @@
 
 示例操作：在浏览器正确打开[https://olawod.github.io/Voronoi/](https://olawod.github.io/Voronoi/) 或 `index.html` 后，将随机生成 100 个点并生成 Voronoi 图，显示如下画面：
 
-![open](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/open.png)
+![open](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/open.png)
 
 ## 随机生成 N 个点
 
@@ -14,7 +14,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，在按钮 "随机生成" 那一行的输入框中输入要生成的点数 N=10，点击按钮 "随机生成" 后，显示如下画面：
 
-![randgen](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/randgen.png)
+![randgen](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/randgen.png)
 
 注意，程序执行时间与 N 呈正相关，请根据自身电脑及浏览器配置酌情填写生成点数。
 
@@ -24,7 +24,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，当前 Voronoi 图中共有 10 个点时，在按钮 "随机添加" 那一行的输入框中输入要添加的点数 N=5，点击按钮 "随机添加" 后，显示如下画面：（左图为添加前，右图为添加后）
 
-![randadd](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/randadd.jpg)
+![randadd](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/randadd.jpg)
 
 注意，程序执行时间与 N 呈正相关，请根据自身电脑及浏览器配置酌情填写添加点数。
 
@@ -34,7 +34,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，鼠标点击右上角前与点击右上角后，显示如下画面：（左图为点击前，右图为点击后）
 
-![addclick](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/addclick.jpg)
+![addclick](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/addclick.jpg)
 
 ## 添加新点（输入坐标）
 
@@ -42,7 +42,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，在按钮 "添加一点" 那一行的输入框中输入要生成的点的横坐标=700 与纵坐标=500，点击按钮 "添加一点" 后，显示如下画面：（左图为添加前，右图为添加后）
 
-![addtext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/addtext.jpg)
+![addtext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/addtext.jpg)
 
 ## 求最近邻（鼠标位置）
 
@@ -50,7 +50,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，将鼠标移到坐标（367, 344） 后，显示如下画面：
 
-![neighbormm](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/neighbormm.png)
+![neighbormm](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/neighbormm.png)
 
 可以看到，点（367, 344）的最近邻是点9，其坐标是（349.4, 309.2），其所在区域被高亮显示。
 
@@ -62,7 +62,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，在按钮 "求最近邻" 那一行的输入框中输入要求最近邻的点的横坐标=400 与纵坐标=400，点击按钮 "求最近邻" 后，显示如下画面：
 
-![neighbortext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/neighbortext.png)
+![neighbortext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/neighbortext.png)
 
 可以看到，点（400, 400）的最近邻是点12，其坐标是（479, 424.4），其所在区域被高亮显示。
 
@@ -74,7 +74,7 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，勾选控制面板中第一行的 "求当前图上所有点的最近邻" 后，显示如下画面：
 
-![neighbortext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/neighborall.png)
+![neighbortext](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/neighborall.png)
 
 可以看到，浅灰线为当前 Voronoi 图解对应的 Delaunay 三角剖分，每个蓝色箭头表示每个 cell 对应的 site （箭头起点）的最近邻（箭头终点）。
 
@@ -84,4 +84,4 @@
 
 示例操作：在未勾选 "求当前图上所有点的最近邻" 时，点击按钮 "清空" 后，显示如下画面：
 
-![reset](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@1.0/docs/source/assets/reset.png)
+![reset](https://cdn.jsdelivr.net/gh/OlaWod/Voronoi@2.0/docs/source/assets/reset.png)
